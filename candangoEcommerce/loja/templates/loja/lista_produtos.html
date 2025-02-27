@@ -65,7 +65,7 @@
                             <p class="fw-bold text-success">R$ {{ produto.preco }}</p>
                             <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20no%20produto:%20{{ produto.nome }}" 
                                class="btn btn-success whatsapp-btn w-100" target="_blank">
-                                Fale no WhatsApp
+                                Comprar
                             </a>
                             {% if user.is_authenticated %}
                                 <a href="{% url 'editar_produto' produto.id %}" class="btn btn-warning w-100 mt-2">Editar</a>
