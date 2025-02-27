@@ -49,8 +49,7 @@ INSTALLED_APPS = [
     "loja",
     
     # Cloudinary apps
-    'cloudinary',
-    'cloudinary_storage',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
