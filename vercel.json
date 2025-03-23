@@ -1,0 +1,38 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/index.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.9",
+                "buildCommand": "python migrate.py"
+            }
+        },
+        {
+            "src": "candangoEcommerce/loja/static/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/candangoEcommerce/loja/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+                "Access-Control-Allow-Credentials": "true"
+            },
+            "continue": true,
+            "dest": "api/index.py"
+        }
+    ],
+    "env": {
+        "PYTHONPATH": "/var/task/candangoEcommerce"
+    }
+}

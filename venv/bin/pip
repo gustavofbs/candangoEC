@@ -1,4 +1,4 @@
-#!/home/alunaris/projetos/candangoEC/venv/bin/python
+#!/home/alunaris/projetos/candangoEC/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
